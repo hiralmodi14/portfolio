@@ -491,7 +491,7 @@
 *,
 *::before,
 *::after {
-  cursor: url('/pencil-cursor.svg') 1 31, url('/pencil-cursor.png') 1 31, auto !important;
+  cursor: url('/portfolio/pencil-cursor.svg') 1 31, url('/portfolio/pencil-cursor.png') 1 31, auto !important;
 }
 
 /* Allow clear text cursor inside inputs for typing */

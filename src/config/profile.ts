@@ -36,7 +36,7 @@ export const PROFILE_CONFIG: ProfileConfig = {
   degree: 'B.Tech in Computer Science Engineering',
   college: 'Geetanjali Institute of Technical Studies (GITS)',
   batch: '2024 – 2028 • Udaipur, Rajasthan',
-  photo: '/images/profile.jpg',
+  photo: '/portfolio/images/profile.jpg',
   polaroidCaption: 'Powered by curiosity & morning sunlight🌻',
   greeting: "Hey, I'm Hiral Modi!",
   bio: 'Computer Science Engineering student at Geetanjali Institute of Technical Studies (2024–2028). Active open-source contributor to OWASP BLT (Bug Logging Tool) with merged pull requests. Passionate about AI Security, Cyber Ranges (AI Flaw Factory), containerized LLM sandboxes, and privacy-first IoT systems.',

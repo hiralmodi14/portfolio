@@ -1,0 +1,33 @@
+[
+  {
+    "id": "blt-pr-50",
+    "number": 50,
+    "title": "blt-pages: remove dead config keys, unused font dependency & fix playwright",
+    "fullTitle": "blt-pages: remove dead config keys, unused @fontsource dependency, and use python3 in playwright",
+    "repo": "OWASP / BLT",
+    "repoUrl": "https://git.owaspblt.org/BLT",
+    "url": "https://git.owaspblt.org/BLT/pull/50",
+    "branch": "hiralmodi:blt-pages/cleanup-config-and-deps",
+    "status": "MERGED",
+    "issueFixed": "#160",
+    "summary": "Removed dead GitLab-era config keys (PROJECT_PATH, ISSUE_TEMPLATE), pruned unused @fontsource/manrope dependency, and updated Playwright webServer runner to use python3.",
+    "tags": ["blt-pages", "Playwright", "Cleanup"],
+    "date": "November 2026"
+  },
+  {
+    "id": "blt-pr-31",
+    "number": 31,
+    "title": "coderabbit: update README to document .coderabbit.yml and clarify status",
+    "fullTitle": "coderabbit: update README to document .coderabbit.yml and clarify status",
+    "repo": "OWASP / BLT",
+    "repoUrl": "https://git.owaspblt.org/BLT",
+    "url": "https://git.owaspblt.org/BLT/pull/31",
+    "branch": "hiralmodi:coderabbit/fix-readme-config",
+    "status": "MERGED",
+    "issueFixed": "#188",
+    "summary": "Documented CodeRabbit automated review rules, quality labels & issue enrichment pipelines; clarified root repository config constraints.",
+    "tags": ["CodeRabbit", "CI/CD", "Documentation"],
+    "date": "November 2026"
+  }
+]
+

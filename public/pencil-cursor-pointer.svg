@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <!-- Drop shadow for contrast -->
+  <g filter="drop-shadow(0px 1px 2px rgba(0,0,0,0.5))">
+    <!-- Little creative sparkle near the tip indicating interactive clickability -->
+    <path d="M2 8 L3 6 L5 6 L3.5 4.5 L4 2.5 L2 3.5 L0 2.5 L0.5 4.5 L-1 6 L1 6 Z" fill="#f59e0b" opacity="0.9" transform="translate(3, -2) scale(0.7)" />
+
+    <!-- Eraser cap -->
+    <path d="M24 20 L27 17 C28.5 15.5 30.5 17.5 29 19 L26 22 Z" fill="#fb7185" stroke="#181615" stroke-width="1.2" stroke-linejoin="round" />
+    <!-- Metal Ferrule band -->
+    <path d="M22 18 L24 20 L26 22 L24 24 Z" fill="#cbd5e1" stroke="#181615" stroke-width="1.2" stroke-linejoin="round" />
+    <line x1="23" y1="19" x2="25" y2="21" stroke="#ffffff" stroke-width="0.8" />
+    <!-- Pencil Body (Yellow wooden barrel with warm active glow) -->
+    <path d="M8 4 L22 18 L20 20 L6 6 Z" fill="#fbbf24" stroke="#181615" stroke-width="1.2" stroke-linejoin="round" />
+    <path d="M6 6 L20 20 L18 22 L4 8 Z" fill="#d97706" stroke="#181615" stroke-width="1.2" stroke-linejoin="round" />
+    <line x1="7" y1="5" x2="21" y2="19" stroke="#fef3c7" stroke-width="0.8" stroke-linecap="round" />
+    <!-- Sharpened Wood Cone -->
+    <path d="M0 0 L8 4 L6 6 L4 8 Z" fill="#ffedd5" stroke="#181615" stroke-width="1.2" stroke-linejoin="round" />
+    <!-- Graphite Lead Tip (Hotspot at 0, 0) -->
+    <path d="M0 0 L3.5 1.75 L1.75 3.5 Z" fill="#0f172a" stroke="#181615" stroke-width="0.8" stroke-linejoin="round" />
+  </g>
+</svg>

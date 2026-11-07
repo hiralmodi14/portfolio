@@ -1,0 +1,502 @@
+@import "tailwindcss";
+
+:root {
+  --font-marker: 'Permanent Marker', cursive, sans-serif;
+  --font-sketch: 'Kalam', 'Patrick Hand', cursive, sans-serif;
+  --font-caveat: 'Caveat', cursive, sans-serif;
+  --font-kalam: 'Kalam', cursive, sans-serif;
+  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --paper-kraft: #ede4d3;
+  --paper-kraft-dark: #dfd4bf;
+  --paper-page: #fbf7ee;
+  --paper-page-alt: #f5eedb;
+  --ink-black: #181615;
+  --ink-gray: #38332e;
+  --ink-blue: #1d4ed8;
+  --ink-red: #b91c1c;
+  --watercolor-yellow: #facc15;
+  --watercolor-pink: #f472b6;
+  --watercolor-blue: #60a5fa;
+  --watercolor-green: #4ade80;
+  --pencil-gray: #524d46;
+  --spiral-metal: #232220;
+  --spiral-highlight: #706e69;
+  --spiral-shadow: rgba(0, 0, 0, 0.45);
+  --desk-wood: #191613;
+}
+
+/* Font helpers */
+.font-marker {
+  font-family: var(--font-marker);
+  letter-spacing: -0.01em;
+}
+
+.font-sketch {
+  font-family: var(--font-sketch);
+  letter-spacing: 0.01em;
+}
+
+.font-caveat {
+  font-family: var(--font-caveat);
+}
+
+.font-kalam {
+  font-family: var(--font-kalam);
+}
+
+/* Authentic Paper Background (Smooth Clean Paper) */
+.paper-texture-kraft {
+  background-color: var(--paper-kraft);
+}
+
+.paper-texture-page {
+  background-color: var(--paper-page);
+}
+
+.paper-grid {
+  background-image: none !important;
+}
+
+.paper-dots {
+  background-image: none !important;
+}
+
+/* Washi tape effects */
+.washi-tape {
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  opacity: 0.88;
+}
+
+.washi-tape-yellow {
+  background: rgba(254, 240, 138, 0.85);
+  border-left: 2px dashed rgba(234, 179, 8, 0.5);
+  border-right: 2px dashed rgba(234, 179, 8, 0.5);
+}
+
+.washi-tape-pink {
+  background: rgba(253, 164, 175, 0.85);
+  border-left: 2px dashed rgba(244, 63, 94, 0.5);
+  border-right: 2px dashed rgba(244, 63, 94, 0.5);
+}
+
+.washi-tape-blue {
+  background: rgba(186, 230, 253, 0.85);
+  border-left: 2px dashed rgba(56, 189, 248, 0.5);
+  border-right: 2px dashed rgba(56, 189, 248, 0.5);
+}
+
+.washi-tape-green {
+  background: rgba(187, 247, 208, 0.85);
+  border-left: 2px dashed rgba(34, 197, 94, 0.5);
+  border-right: 2px dashed rgba(34, 197, 94, 0.5);
+}
+
+/* Watercolor brush shapes */
+.brush-yellow {
+  background: linear-gradient(110deg, #fcd34d 0%, #fde047 50%, #facc15 100%);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
+}
+
+.brush-pink {
+  background: linear-gradient(135deg, rgba(244, 114, 182, 0.45) 0%, rgba(251, 113, 133, 0.38) 100%);
+  border-radius: 40px 180px 30px 140px/140px 30px 180px 40px;
+}
+
+.brush-blue {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.55) 0%, rgba(59, 130, 246, 0.45) 100%);
+  border-radius: 120px 40px 160px 30px/30px 160px 40px 120px;
+}
+
+.brush-black {
+  background: #181615;
+  border-radius: 255px 12px 240px 14px/14px 245px 12px 250px;
+}
+
+/* 3D Perspective & Book Flipping Rules */
+.perspective-container {
+  perspective: 2600px;
+  perspective-origin: 50% 50%;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Sketchbook shadow layers */
+.book-shadow {
+  box-shadow: 
+    -15px 25px 45px rgba(0, 0, 0, 0.4),
+    0 10px 20px rgba(0, 0, 0, 0.25),
+    inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Paper styled scrollable lists */
+.scrollbar-sketch {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(24, 22, 21, 0.4) transparent;
+}
+.scrollbar-sketch::-webkit-scrollbar {
+  width: 5px;
+}
+.scrollbar-sketch::-webkit-scrollbar-thumb {
+  background: rgba(24, 22, 21, 0.35);
+  border-radius: 9999px;
+}
+.scrollbar-sketch::-webkit-scrollbar-thumb:hover {
+  background: rgba(24, 22, 21, 0.65);
+}
+
+/* Hand-drawn style borders */
+.sketch-border {
+  border: 2px solid #181615;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+.sketch-box {
+  border: 1.8px solid #181615;
+  border-radius: 4px 18px 3px 22px/19px 4px 20px 3px;
+}
+
+.sticky-note {
+  box-shadow: 
+    2px 4px 10px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.08);
+  transform: rotate(-1.5deg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sticky-note:hover {
+  transform: rotate(0deg) scale(1.02);
+  box-shadow: 
+    4px 8px 16px rgba(0, 0, 0, 0.16),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   MIDNIGHT BLUEPRINT MODE (STUNNING HIGH-CONTRAST DARK THEME)
+   ========================================================================== */
+.midnight-mode {
+  --paper-kraft: #0b0f19;
+  --paper-kraft-dark: #070a12;
+  --paper-page: #0f172a;
+  --paper-page-alt: #1e293b;
+  --ink-black: #f8fafc;
+  --ink-gray: #cbd5e1;
+  --ink-blue: #38bdf8;
+  --ink-red: #f87171;
+  --pencil-gray: #94a3b8;
+  --spiral-metal: #475569;
+  --spiral-highlight: #94a3b8;
+  --spiral-shadow: rgba(0, 0, 0, 0.7);
+  --desk-wood: #030712;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.midnight-mode main {
+  background-color: #030712 !important;
+}
+
+.midnight-mode .paper-texture-page {
+  background-color: #0d1527 !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+.midnight-mode .paper-texture-kraft {
+  background-color: #111827 !important;
+  color: #f8fafc !important;
+  border-color: #374151 !important;
+}
+
+.midnight-mode .paper-grid {
+  background-image: none !important;
+}
+
+.midnight-mode .paper-dots {
+  background-image: none !important;
+}
+
+/* Enhanced Dark Mode Typography & Contrast */
+.midnight-mode .font-sketch,
+.midnight-mode .font-marker,
+.midnight-mode .font-caveat {
+  letter-spacing: 0.02em;
+}
+
+/* Primary Headings & Labels */
+.midnight-mode .text-\[\#1d4ed8\],
+.midnight-mode .text-blue-600,
+.midnight-mode .text-blue-700,
+.midnight-mode .text-sky-900,
+.midnight-mode .text-sky-950 {
+  color: #38bdf8 !important; /* Luminous sky blue */
+}
+
+/* Pure Crisp Charcoal Overrides */
+.midnight-mode .text-neutral-950,
+.midnight-mode .text-neutral-900,
+.midnight-mode .text-neutral-850,
+.midnight-mode .text-neutral-800,
+.midnight-mode .text-\[\#181615\] {
+  color: #f8fafc !important; /* Pure luminous white */
+}
+
+.midnight-mode .text-neutral-700,
+.midnight-mode .text-neutral-600 {
+  color: #cbd5e1 !important; /* Crisp light silver */
+}
+
+.midnight-mode .text-neutral-500,
+.midnight-mode .text-neutral-400 {
+  color: #94a3b8 !important; /* Slate */
+}
+
+/* Colored Domain Text Overrides */
+.midnight-mode .text-amber-950,
+.midnight-mode .text-amber-900,
+.midnight-mode .text-amber-800 {
+  color: #fde047 !important; /* Bright Gold */
+}
+
+.midnight-mode .text-orange-950,
+.midnight-mode .text-orange-900,
+.midnight-mode .text-orange-800 {
+  color: #fdba74 !important; /* Warm Peach */
+}
+
+.midnight-mode .text-purple-950,
+.midnight-mode .text-purple-900,
+.midnight-mode .text-purple-800 {
+  color: #d8b4fe !important; /* Soft Lavender */
+}
+
+.midnight-mode .text-emerald-950,
+.midnight-mode .text-emerald-900,
+.midnight-mode .text-emerald-800 {
+  color: #86efac !important; /* Mint Green */
+}
+
+.midnight-mode .text-rose-950,
+.midnight-mode .text-rose-900,
+.midnight-mode .text-rose-800,
+.midnight-mode .text-\[\#b91c1c\],
+.midnight-mode .text-red-800 {
+  color: #fca5a5 !important; /* Bright Coral */
+}
+
+/* Dark Mode Card Backgrounds */
+.midnight-mode .sketch-box,
+.midnight-mode .sketch-border {
+  border-color: #475569 !important;
+  background-color: #111827 !important;
+  color: #f8fafc !important;
+}
+
+.midnight-mode .border-neutral-300,
+.midnight-mode .border-neutral-200,
+.midnight-mode .border-neutral-400 {
+  border-color: #334155 !important;
+}
+
+.midnight-mode .bg-white,
+.midnight-mode .bg-white\/95,
+.midnight-mode .bg-white\/90,
+.midnight-mode .bg-white\/85,
+.midnight-mode .bg-white\/80,
+.midnight-mode .bg-white\/70,
+.midnight-mode .bg-\[\#fffefb\],
+.midnight-mode .bg-\[\#fbf8f0\],
+.midnight-mode .bg-\[\#fefdfb\],
+.midnight-mode .bg-\[\#fdfaf3\] {
+  background-color: #182234 !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+.midnight-mode .bg-\[\#f4ebd9\] {
+  background-color: #0f172a !important;
+  border-color: #334155 !important;
+  color: #f8fafc !important;
+}
+
+.midnight-mode .bg-\[\#ebdcc4\] {
+  background-color: #1e293b !important;
+  border-color: #38bdf8 !important;
+}
+
+.midnight-mode .bg-amber-50,
+.midnight-mode .bg-amber-50\/70,
+.midnight-mode .bg-amber-100,
+.midnight-mode .bg-amber-100\/80,
+.midnight-mode .bg-amber-100\/90 {
+  background-color: rgba(30, 41, 59, 0.95) !important;
+  border-color: #eab308 !important;
+  color: #fef08a !important;
+}
+
+.midnight-mode .bg-sky-50,
+.midnight-mode .bg-sky-50\/70,
+.midnight-mode .bg-sky-100,
+.midnight-mode .bg-sky-100\/80 {
+  background-color: rgba(14, 116, 144, 0.35) !important;
+  border-color: #38bdf8 !important;
+  color: #7dd3fc !important;
+}
+
+.midnight-mode .bg-emerald-50,
+.midnight-mode .bg-emerald-50\/70,
+.midnight-mode .bg-emerald-100,
+.midnight-mode .bg-emerald-100\/80 {
+  background-color: rgba(6, 95, 70, 0.35) !important;
+  border-color: #34d399 !important;
+  color: #86efac !important;
+}
+
+.midnight-mode .bg-purple-50,
+.midnight-mode .bg-purple-50\/70,
+.midnight-mode .bg-purple-100,
+.midnight-mode .bg-purple-100\/80 {
+  background-color: rgba(88, 28, 135, 0.35) !important;
+  border-color: #c084fc !important;
+  color: #e9d5ff !important;
+}
+
+.midnight-mode .bg-rose-50,
+.midnight-mode .bg-rose-50\/70,
+.midnight-mode .bg-rose-100,
+.midnight-mode .bg-rose-100\/80 {
+  background-color: rgba(159, 18, 57, 0.35) !important;
+  border-color: #fb7185 !important;
+  color: #fecdd3 !important;
+}
+
+.midnight-mode .bg-orange-50,
+.midnight-mode .bg-orange-50\/70,
+.midnight-mode .bg-orange-100,
+.midnight-mode .bg-orange-100\/80 {
+  background-color: rgba(154, 52, 18, 0.35) !important;
+  border-color: #fb923c !important;
+  color: #fed7aa !important;
+}
+
+.midnight-mode .bg-\[\#fef9c3\],
+.midnight-mode .bg-\[\#fef08a\],
+.midnight-mode .bg-\[\#fef08a\]\/80,
+.midnight-mode .bg-\[\#fed7aa\] {
+  background-color: #1e293b !important;
+  border-color: #f59e0b !important;
+  color: #fef08a !important;
+}
+
+.midnight-mode .bg-neutral-50,
+.midnight-mode .bg-neutral-50\/70,
+.midnight-mode .bg-neutral-50\/60,
+.midnight-mode .bg-neutral-100 {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+.midnight-mode input,
+.midnight-mode textarea {
+  background-color: #0b1120 !important;
+  color: #f8fafc !important;
+  border-color: #475569 !important;
+}
+
+.midnight-mode input:focus,
+.midnight-mode textarea:focus {
+  border-color: #38bdf8 !important;
+}
+
+.midnight-mode .washi-tape-yellow {
+  background: rgba(234, 179, 8, 0.35) !important;
+}
+.midnight-mode .washi-tape-pink {
+  background: rgba(244, 63, 94, 0.35) !important;
+}
+.midnight-mode .washi-tape-blue {
+  background: rgba(56, 189, 248, 0.35) !important;
+}
+.midnight-mode .washi-tape-green {
+  background: rgba(34, 197, 94, 0.35) !important;
+}
+
+/* Cover Quote Underlines & Accent Fills */
+.midnight-mode .bg-\[\#2563eb\],
+.midnight-mode .bg-\[\#1d4ed8\] {
+  background-color: #38bdf8 !important;
+}
+.midnight-mode .bg-\[\#dc2626\],
+.midnight-mode .bg-\[\#b91c1c\] {
+  background-color: #f87171 !important;
+}
+.midnight-mode .text-\[\#2563eb\] {
+  color: #38bdf8 !important;
+}
+.midnight-mode .text-\[\#dc2626\] {
+  color: #f87171 !important;
+}
+
+/* Bookmark Tab Top Navigation in Dark Mode */
+.midnight-mode button.rounded-t-md {
+  color: #0f172a !important;
+}
+
+/* Crisp Heading Font Shadows in Dark Mode */
+.midnight-mode .font-marker {
+  letter-spacing: 0.01em;
+}
+
+/* ==========================================
+   SKETCHBOOK PENCIL CURSOR (SMOOTH & ZERO-GLITCH)
+   ========================================== */
+*,
+*::before,
+*::after {
+  cursor: url('/pencil-cursor.svg') 1 31, url('/pencil-cursor.png') 1 31, auto !important;
+}
+
+/* Allow clear text cursor inside inputs for typing */
+input[type="text"],
+input[type="email"],
+textarea {
+  cursor: text !important;
+}
